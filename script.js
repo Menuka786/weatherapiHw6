@@ -1,4 +1,4 @@
-// Global variable declarations
+// Global variable 
 var cityList = [];
 var cityname;
 
@@ -7,7 +7,7 @@ initCityList();
 initWeather();
 
 
-// This function displays the city entered by the user into the DOM
+// This will displays the city entered by the user
 function renderCities(){
     $("#cityList").empty();
     $("#cityInput").val("");
@@ -32,7 +32,7 @@ function initCityList() {
     renderCities();
     }
 
-// This function pull the current city into local storage to display the current weather forecast on reload
+// Local storage display the current weather forecast on reload
 function initWeather() {
     var storedWeather = JSON.parse(localStorage.getItem("currentCity"));
 
