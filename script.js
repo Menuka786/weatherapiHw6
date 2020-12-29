@@ -78,12 +78,7 @@ $("#citySearchBtn").on("click", function(event){
     displayFiveDayForecast();
 });
 
-// Event handler for if the user hits enter after entering the city search term
-$("#cityInput").keypress(function(e){
-    if(e.which == 13){
-        $("#citySearchBtn").click();
-    }
-})
+
 
 // This function runs the Open Weather API AJAX call and displays the current city, weather, and 5 day forecast to the DOM
 async function displayWeather() {
@@ -116,7 +111,7 @@ async function displayWeather() {
         var getLong = response.coord.lon;
         var getLat = response.coord.lat;
         
-        var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=d3b85d453bf90d469c82e650a0a3da26&lat="+getLat+"&lon="+getLong;
+        var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=1189a8fbb109af10949b96cf772fd4ee&lat="+getLat+"&lon="+getLong;
         var uvResponse = await $.ajax({
             url: uvURL,
             method: "GET"
@@ -146,7 +141,7 @@ async function displayWeather() {
 // This function runs the AJAX call for the 5 day forecast and displays them to the DOM
 async function displayFiveDayForecast() {
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+cityname+"&units=imperial&appid=d3b85d453bf90d469c82e650a0a3da26";
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+cityname+"&units=imperial&appid=1189a8fbb109af10949b96cf772fd4ee";
 
     var response = await $.ajax({
         url: queryURL,
