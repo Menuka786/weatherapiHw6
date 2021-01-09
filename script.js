@@ -1,8 +1,8 @@
-// Global variable 
+// Setting Global variable 
 var cityList = [];
 var cityname;
 
-// local storage functions
+// Here is local storage functions
 initCityList();
 initWeather();
 
